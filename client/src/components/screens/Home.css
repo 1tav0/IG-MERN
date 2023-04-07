@@ -1,0 +1,36 @@
+.home__card__wrapper{
+    max-width: 500px;
+    height: max-content;
+    margin: 26px auto;
+}
+
+.home__card__image{
+  cursor: pointer;
+}
+
+.home__card__image >img {
+    width: 100%; /* make the image fill the entire width of its container */
+    height: 100%; /* make the image fill the entire height of its container */
+    object-fit: cover; /* make the image fill the container while maintaining its aspect ratio */
+  }
+
+  .home__card > h5{
+    padding: 10px;
+  }
+
+  .home__card__content{
+    padding: 10px;
+  }
+
+  .parent:hover .delete__icon{
+    opacity: 1; /* show the icon when the parent element is hovered*/
+  }
+
+  .delete__icon{
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out; /* add a transition effect for smoother animation*/
+  }
+
+  .like__post{
+    cursor: pointer;
+  }
