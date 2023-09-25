@@ -5,8 +5,6 @@ const { mongodb } = require('./keys')
 const User = require('./models/User')
 const Post = require('./models/Post')
 
-const PORT = 5000
-
 const AuthRoutes = require('./routes/auth')
 const PostRoutes = require('./routes/post')
 const UserRoutes = require('./routes/user')
@@ -15,6 +13,11 @@ app.use(express.json()) //placing matters
 app.use(AuthRoutes)
 app.use(PostRoutes)
 app.use(UserRoutes)
+
+let PORT = process.env.PORT;
+if (PORT == null || PORT == "") {
+    PORT = 5000
+}
 
 mongoose
     .set('strictQuery', true)
