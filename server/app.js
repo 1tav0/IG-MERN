@@ -14,17 +14,18 @@ app.use(AuthRoutes)
 app.use(PostRoutes)
 app.use(UserRoutes)
 
-let PORT = process.env.PORT;
-if (PORT == null || PORT == "") {
-    PORT = 5000
-}
-
 mongoose
     .set('strictQuery', true)
     .connect(mongodb)
     .then(() => console.log('connected to db'))
     .catch(err => console.log(err))
 
-app.listen(PORT, () => {
-    console.log(`running on port ${PORT}`)
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000;
+}
+app.listen(port);
+
+app.listen(port, () => {
+    console.log(`running on port ${port}`)
 })
