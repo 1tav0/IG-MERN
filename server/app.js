@@ -22,9 +22,8 @@ mongoose
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-    port = 8000;
+    port = 5000;
 }
-app.listen(port);
 
 app.listen(port, () => {
     console.log(`running on port ${port}`)
