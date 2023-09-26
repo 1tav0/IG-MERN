@@ -16,7 +16,8 @@ const Profile = () => {
     useEffect(() => {
         try {
             async function fetchData() {
-                const request = await fetch(`/user/${userid}`, {
+                const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+                const request = await fetch(`${herokuBackendURL}/user/${userid}`, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
                     }
@@ -38,7 +39,8 @@ const Profile = () => {
     
     const followUser = async () => {
         try {
-            const request = await fetch("/follow", {
+            const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+            const request = await fetch(`${herokuBackendURL}/follow`, {
                 method: "Put",
                 headers: {
                     "Content-Type": "application/json",
@@ -75,7 +77,8 @@ const Profile = () => {
 
     const unfollowUser = async () => {
         try {
-            const request = await fetch("/unfollow", {
+            const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+            const request = await fetch(`${herokuBackendURL}/unfollow`, {
                 method: "Put",
                 headers: {
                     "Content-Type" : "application/json",

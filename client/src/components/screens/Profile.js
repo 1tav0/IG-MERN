@@ -16,7 +16,8 @@ const Profile = () => {
         // console.log(state)
         try {
             async function fetchData() {
-                const request = await fetch('/myposts', {
+                const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+                const request = await fetch(`${herokuBackendURL}/myposts`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -49,7 +50,8 @@ const Profile = () => {
                     console.log(response)
                     // localStorage.setItem('user', JSON.stringify({ ...state, pic: response.url }))
                     // dispatch({ type: "UPDATEPIC", payload: response.url })
-                    const fetchpic = await fetch('/updatepic', {
+                    const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+                    const fetchpic = await fetch(`${herokuBackendURL}/updatepic`, {
                         method: "Put",
                         headers: {
                             "Content-Type": "application/json",

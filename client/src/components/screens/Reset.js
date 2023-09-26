@@ -13,7 +13,8 @@ const Reset = () => {
                 M.toast({html: "Invalid Email Address", classes: "#d50000 red accent-4"})
                 return;
             }
-            const request = await fetch("//reset-password", {
+            const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+            const request = await fetch(`${herokuBackendURL}/reset-password`, {
                 method: "post",
                 headers: {
                     "Content-Type":"application/json"
@@ -28,7 +29,7 @@ const Reset = () => {
                 M.toast({html: response.error, classes: "#d50000 red accent-4"})
             } else {
                 M.toast({ html: response.message, classes: "#00c853 green accent-4" })
-                navigate('/sigin')
+                navigate('/signin')
             }
         } catch (error) {
             console.log(error)

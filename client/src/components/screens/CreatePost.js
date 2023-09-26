@@ -14,7 +14,8 @@ const CreatePost = () => {
         if(url){ //mounts everytime we refresh without this
             async function fetchData() {
                 try {
-                    const request = await fetch("/createpost", {
+                    const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+                    const request = await fetch(`${herokuBackendURL}/createpost`, {
                         method: "post",
                         headers: {
                             "Content-Type": "application/json",

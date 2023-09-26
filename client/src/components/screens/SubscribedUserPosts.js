@@ -15,7 +15,8 @@ const Home = () => {
   useEffect(() => {
     async function fetchData(){
       try {
-        const request = await fetch("/followingposts", {
+        const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+        const request = await fetch(`${herokuBackendURL}/followingposts`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -35,7 +36,8 @@ const Home = () => {
   const likePost = async (id) => {
     try {
       // console.log(id)
-      const request = await fetch('/like', {
+      const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+      const request = await fetch(`${herokuBackendURL}/like`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +64,8 @@ const Home = () => {
 
   const unlikePost = async (id) => {
     try {
-      const request = await fetch('/unlike', {
+      const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+      const request = await fetch(`${herokuBackendURL}/unlike`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -89,7 +92,8 @@ const Home = () => {
 
   const commentPost = async (text, postId, index) => {
     try {
-      const request = await fetch('/comment', {
+      const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+      const request = await fetch(`${herokuBackendURL}/comment`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -135,7 +139,8 @@ const Home = () => {
   const deletePost = async (postid) => {
     try {
       console.log(postid)
-      const request = await fetch(`/deletepost/${postid}`, {
+      const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+      const request = await fetch(`${herokuBackendURL}/deletepost/${postid}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -181,7 +186,8 @@ second code snippet is used when you want to update an element in an array with 
 
   const deleteComment = async (commentId) => {
     try {
-      const request = await fetch(`/deletecomment/${commentId}`, {
+      const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com";
+      const request = await fetch(`${herokuBackendURL}/deletecomment/${commentId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

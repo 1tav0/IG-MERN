@@ -16,7 +16,8 @@ const SignIn = () => {
                 M.toast({html: "Invalid Email Address", classes: "#d50000 red accent-4"})
                 return;
             }
-            const request = await fetch("/signin", {
+            const herokuBackendURL = "https://insta-mernbackend-2be90e891ef6.herokuapp.com"; 
+            const request = await fetch(`${herokuBackendURL}/signin`, {
                 method: "post",
                 headers: {
                     "Content-Type":"application/json"
